@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'check_cpf_cnpj'
 
-class CheckCpfCnpjTest < MiniTest::Unit::TestCase
+class CpfTest < MiniTest::Unit::TestCase
   def test_valid_formatted_cpf
     assert_equal "934.638.338-08", CheckCpfCnpj.formatted_cpf('93463833808')
   end
