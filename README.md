@@ -1,5 +1,5 @@
 # check_cpf_cnpj
-### Version 0.1.2
+### Version 0.2.0
 Avaliable CPF validation
 
 ##Synopsis
@@ -13,8 +13,12 @@ gem install check_cpf_cnpj
 ## Example
 <pre>
 CheckCpfCnpj.valid_cpf?('11122233344') # => false
-CheckCpfCnpj.formatted_cpf('11122233344') # => '111.222.333-44'
-CheckCpfCnpj.only_cpf_numbers('111.222.333-44') # => '11122233344'
+CheckCpfCnpj.formatted_cpf('11122233344') # => "111.222.333-44"
+CheckCpfCnpj.only_cpf_numbers('111.222.333-44') # => "11122233344"
+
+CheckCpfCnpj.valid_cnpj?('11222333444455') # => false
+CheckCpfCnpj.formatted_cnpj('1122233344445') # => "11.222.333/4444-55"
+CheckCpfCnpj.only_cnpj_numbers('11.222.333/4444-55') => "11222333444455"
 </pre>
 
 
