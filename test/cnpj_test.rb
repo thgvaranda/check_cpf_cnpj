@@ -1,8 +1,8 @@
 require 'minitest/autorun'
-require 'check_cpf_cnpj'
+require 'check_cpf_cnpj.rb'
 
 # 27.332.993/0001-55
-class CnpjTest < MiniTest::Unit::TestCase
+class CnpjTest < MiniTest::Test
   def test_valid_formatted_cnpj
     assert_equal "27.332.993/0001-55", CheckCpfCnpj.formatted_cnpj('27332993000155')
   end
@@ -17,10 +17,12 @@ class CnpjTest < MiniTest::Unit::TestCase
 
   def test_valid_cnpj
     assert CheckCpfCnpj.valid_cnpj?('27332993000155')
+    assert CheckCpfCnpj.valid_cnpj?('82743906000160')
   end
 
   def test_invalid_cnpj
     refute CheckCpfCnpj.valid_cnpj?('27335993000155')
+    refute CheckCpfCnpj.valid_cnpj?('00000000000000')
   end
 
   def test_invalid_fist_digit

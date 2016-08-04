@@ -1,9 +1,6 @@
 module CheckCpfCnpj
-
   require 'cpf/cpf'
   require 'cnpj/cnpj'
-
-
 
   def self.valid_cpf?(number)
     return false if number.size != 11
@@ -19,9 +16,6 @@ module CheckCpfCnpj
     Cpf.new(number).only_numbers
   end
 
-
-
-
   def self.valid_cnpj?(number)
     return false if number.size != 14
     Cnpj.new(number).valid?
@@ -36,9 +30,4 @@ module CheckCpfCnpj
     Cnpj.new(number).only_numbers
   end
 
-
-
 end
-
-
-CheckCpfCnpj.valid_cpf?('93463833808')
